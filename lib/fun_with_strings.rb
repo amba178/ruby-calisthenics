@@ -28,6 +28,11 @@ module FunWithStrings
 
   def anagram_groups
     # your code here
+    arr = self.split(" ").map{|word| split("")}
+    arr.each do |a|
+
+      a.permutation.to_a.map(&:join).inject(Array.new){|ar, el|}
+    end
   end
 end
 

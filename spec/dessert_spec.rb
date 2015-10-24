@@ -1,7 +1,7 @@
 require 'dessert'
 require 'byebug'
 
-describe Dessert, :pending => true do
+describe Dessert do
   describe 'cake' do
     before :each do
       @subject = Dessert.new('cake', 400)
