@@ -15,6 +15,13 @@ end
 
 class JellyBean < Dessert
   def initialize(flavor)
-    # your code here
+    @flavor = flavor 
+    super("#{flavor} jelly bean", 5)
   end
+
+  def delicious?
+    @flavor=='licorice' ? false : super 
+  end
+
+
 end
