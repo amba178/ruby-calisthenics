@@ -37,7 +37,7 @@ describe 'word count' do
   end
 end
 
-describe 'anagram grouping', :pending => true do
+describe 'anagram grouping' do
   describe 'sanity checks' do
     it 'should work on the empty string [5 points]' do
       expect(''.anagram_groups).to eq([])
@@ -47,6 +47,7 @@ describe 'anagram grouping', :pending => true do
     end
   end
   it 'for "scream cars for four scar creams" [10 points]' do
+    #scream cars for four scar creams
     @anagrams =  'scream cars for four scar creams'.anagram_groups
     @anagrams.each { |group| group.sort! }
     [%w(cars scar), %w(four), %w(for), %w(creams scream)].each do |group|
