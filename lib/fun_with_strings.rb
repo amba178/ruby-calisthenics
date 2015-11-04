@@ -37,9 +37,12 @@ module FunWithStrings
   end
 
   def anagram_groups
-    # your code here
-    arr = self.split(" ").map{|word| word.split("")}
-    arr.inject(Array.new(0)){|per_arr, a| per_arr << a.permutation.to_a.map!(&:join)}  #.inject(Array.new){|ar, el|}
+    #aim for two lines of code 
+    h= Hash.new
+    arr = self.split(" ").map(&:downcase)
+    arr.map{|el| h[el]= el.sum}
+    h.group_by{|k, v| v}.map{|k, v| v.flatten.map{|el| el if el.instance_of?(String)}.compact }
+
   end
 end
 
