@@ -23,7 +23,7 @@ describe RockPaperScissors do
     expect(lambda{RockPaperScissors.winner(@rock, ['Dave', 'w'])}).to raise_error(
       RockPaperScissors::NoSuchStrategyError, "Strategy must be one of R,P,S")
   end
-  describe 'tournament', pending: true do
+  describe 'tournament' do
     it 'base case [20 points]' do
       expect(RockPaperScissors.tournament_winner([@rock,@paper])).to be == @paper
     end
@@ -37,7 +37,7 @@ describe RockPaperScissors do
           [ ["Allen", "S"], ["Omer", "P"] ],
           [ ["David E.", "R"], ["Richard X.", "P"] ]
         ]
-      ]
+        ]
       expect(RockPaperScissors.tournament_winner(tourney)).to be == ['Richard', 'R']
     end
   end
